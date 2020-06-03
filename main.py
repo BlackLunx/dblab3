@@ -13,8 +13,8 @@ def clicked():
     f2 = SecondTable(root)
     nb.pack()
 
-    nb.add(f1, text='page1')
-    nb.add(f2, text='page2')
+    nb.add(f1, text='Одежда')
+    nb.add(f2, text='Локация бренда')
 
     root.title('Database')
     root.geometry('650x450+300+200')

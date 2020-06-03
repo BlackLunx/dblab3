@@ -35,7 +35,7 @@ class Database:
     def get_count_clothes(self, _id=-1, brand='', size='', cost=-1):
         self.c.execute(f"""SELECT count_clothes({_id}, '{brand}', '{size}', money({cost}))""")
 
-    def delete_location(self, _id=-1, brand='', size='', cost=-1):
+    def delete_clothes(self, _id=-1, brand='', size='', cost=-1):
         self.c.execute(f"""SELECT delete_clothes({_id}, '{brand}', '{size}', money({cost}))""")
 
     def show_location(self, brand='', place=''):
