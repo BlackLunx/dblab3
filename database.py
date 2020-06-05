@@ -19,12 +19,14 @@ class Database:
         self.c.execute(creating)
         self.c.execute(f'''SELECT create_database()''')
         self.c.close()
+        self.connection.close()
         self.connection = get_connection('lab', 'lab_user', 'lab_user')
         self.c = self.connection.cursor()
         self.c.execute(functions)
 
     def __del__(self):
         self.c.close()
+        self.connection.close()
 
     def show_clothes(self, _id=-1, brand = '', size = '', cost=-1):
         self.c.execute(f"""SELECT * FROM show_clothes({_id}, '{brand}', '{size}', money({cost}))""")

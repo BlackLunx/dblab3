@@ -27,6 +27,7 @@ def delete():
     c.execute(creating)
     c.execute(f'''SELECT drop_database()''')
     c.close()
+    connection.close()
     messagebox.showinfo('Оповещение', 'Успешно удалено')
 
 if __name__ == '__main__':
@@ -35,8 +36,8 @@ if __name__ == '__main__':
     window.geometry('200x200+400+400')
     btn = tk.Button(window, text='Создать и Открыть', command=clicked)
     btn2 = tk.Button(window, text='Удалить', command=delete)
-    btn.grid(column=1, row=2)
-    btn2.grid(column=2, row=2)
+    btn.place(x=45, y=30)
+    btn2.place(x=70, y=100)
     window.mainloop()
 
     
